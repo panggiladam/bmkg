@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Menu Sidebar</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-image: url(); /* Ganti dengan URL gambar Anda */
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+        .sidebar {
+            width: 250px;
+            height: 100vh;
+            background-color: #444;
+            color: white;
+            position: fixed;
+            top: 0;
+            left: -250px; /* Mulai dari luar layar */
+            padding-top: 20px;
+            text-align: center;
+            box-shadow: 2px 0 5px rgba(0, 0, 0, 0.5);
+            animation: slideIn 0.5s forwards; /* Animasi slide in */
+        }
+        @keyframes slideIn {
+            to {
+                left: 0; /* Akhir posisi */
+            }
+        }
+        .sidebar a {
+            padding: 15px 0;
+            text-decoration: none;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 50px;
+            transition: background-color 0.3s;
+        }
+        .sidebar a:hover {
+            background-color: #666;
+        }
+        .content {
+            margin-left: 260px;
+            margin-top: 130px;
+            padding: 20px;
+            text-align: center;
+            background-color: rgba(255, 255, 255, 0.8);
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s;
+            opacity: 0; /* Mulai tidak terlihat */
+            animation: fadeIn 1s forwards; /* Animasi fade in */
+        }
+        @keyframes fadeIn {
+            to {
+                opacity: 1; /* Akhirnya terlihat */
+            }
+        }
+        .content:hover {
+            transform: scale(1.02);
+        }
+        .btn {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.3s;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .btn:hover {
+            background-color: #45a049;
+            transform: translateY(-2px);
+            animation: pulse 0.5s infinite; /* Animasi pulse saat hover */
+        }
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.05);
+            }
+            100% {
+                transform: scale(1);
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="sidebar">
+    <h2>Menu</h2>
+    <a href="login.html">Permohonan Pelayanan</a>
+    <a href="login.html">Katalog Pelayanan</a>
+</div>
+
+<div class="content">
+    <h1>Informasi BMKG</h1>
+    <p>Ini adalah konten utama halaman.</p>
+    <p class="highlighted-paragraph">BMKG (Badan Meteorologi, Klimatologi, dan Geofisika) Padang Panjang adalah lembaga pemerintah yang bertugas untuk memantau dan memberikan informasi terkait cuaca, iklim, dan geofisika di wilayah Padang Panjang dan sekitarnya. Lembaga ini berper an penting dalam menyediakan data dan peringatan dini mengenai bencana alam seperti gempa bumi, tsunami, dan cuaca ekstrem, sehingga masyarakat dapat mengambil langkah-langkah yang diperlukan untuk menjaga keselamatan. Selain itu, BMKG Padang Panjang juga berfungsi sebagai pusat penelitian dan pengembangan dalam bidang meteorologi dan klimatologi, serta memberikan edukasi kepada masyarakat tentang pentingnya memahami kondisi cuaca dan iklim.</p>
+    <button class="btn">Pelajari Lebih Lanjut</button>
+</div>
+
+<script>
+    document.body.addEventListener('click', function() {
+        window.location.href = 'login.html'; // Mengarahkan ke index.html saat diklik
+    });
+</script>
+
+</body>
+</html>
